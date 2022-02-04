@@ -9,16 +9,16 @@ import pandas as pd
 
 from flask import Flask, request , Response
 from flask_restful import Resource, Api
+from flask_cors import CORS, cross_origin
 
 from functions import *
 
 import sys
 
 app = Flask(__name__)
-api = Api(app)
-
 
 @app.route('/getPlanRecomendation', methods=['GET'])
+@cross_origin()
 def getRol(): 
     
     args = request.args
